@@ -1,0 +1,28 @@
+<script>
+
+// while number is swapping
+//   compare the number of current index (i) with the next char (i+1) to the end of array.
+//   	if first number is grather than the second
+//			swap the number forwardly
+//			mark as swap
+//    
+Array.prototype.Sort = function(){
+	do {
+		var swap = false;
+		for (var i = 0; i < this.length-1; i++) {
+			if (this[i] > this[i+1]) {
+				var temp = this[i+1];
+				this[i+1] = this[i];
+				this[i] = temp;
+				swap = true;
+			};
+		};
+	}while(swap);
+}
+var test = [20,1,5,8,9,10];
+test.Sort();
+console.log(test);
+for (var i = 0; i < test.length; i++) {
+	console.log(test[i]);
+};
+</script>
